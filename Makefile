@@ -1,4 +1,5 @@
 CC = gcc
+#CC = wllvm
 MFILE = Makefile
 
 COPTF0 = -O0
@@ -11,7 +12,8 @@ CFLAGS +=  -Xlinker -export-dynamic
 
 INCLUDES =
 #PYTHONINCLUDES = $(shell /usr/bin/python-config --cflags)
-PYTHONINCLUDES = -I/usr/include/python3.6m
+#PYTHONINCLUDES = -I/usr/include/python3.6m
+PYTHONINCLUDES = -I/usr/include/python3.5m
 
 
 LFLAGS = -Lviterbi -Lradar 
@@ -23,6 +25,7 @@ LIBS_IT  = -lviterbi_t -lfmcwdist_t -lpthread -ldl -lutil -lm
 FLIBS    = -lviterbiF -lfmcwdist -lpthread -ldl -lutil -lm
 FLIBS_IT = -lviterbiF_t -lfmcwdist_t -lpthread -ldl -lutil -lm
 #PYTHONLIBS = $(shell /usr/bin/python-config --ldflags)
-PYTHONLIBS = -lpython3.6m
+#PYTHONLIBS = -lpython3.6m
+PYTHONLIBS = -lpython3.5m
 
 include Makefile.targets
